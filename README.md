@@ -21,8 +21,9 @@ This repository provides Docker Compose files for quickly running the entire Con
 # Access to KsqlDB via Ksql-CLI
 To open an interactive ksqlDB CLI session connected to your ksqlDB server, run:
 ```sh
-docker exec -it ksqldb-cli ksql http://ksqldb-server:8088
-docker exec -it ksqldb-cli ksql http://ksqldb-server:8088 -e "SHOW STREAMS;"
+docker exec -it ksqldb-cli ksql --config-file /etc/ksqldb-cli.properties http://ksqldb-server:8088
+
+docker exec -it ksqldb-cli ksql --config-file /etc/ksqldb-cli.properties http://ksqldb-server:8088 -e "SHOW STREAMS;"
 ```
 
 
